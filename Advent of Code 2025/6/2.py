@@ -1,11 +1,6 @@
 import re
 inputLines = open("input.txt").read().splitlines()
 
-inputLinesSplit = []
-for row in inputLines:
-    inputLinesSplit.append(row.split())
-    
-amountOfColumns = len(inputLines[0].split())
 totalSum = 0
 
 for i in range(len(inputLines[-1])):
