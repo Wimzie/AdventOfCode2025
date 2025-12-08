@@ -3,10 +3,6 @@ inputLines = open("input.txt").read().splitlines()
 
 pairsToCheck = 1000
 
-boxes = []
-for line in inputLines:
-    boxes.append(int(line.split(",")[0]) + int(line.split(",")[1]) + int(line.split(",")[2]))
-
 def calculateDistance(point1, point2):
     p1Coords = point1.split(",")
     p2Coords = point2.split(",")
@@ -45,11 +41,6 @@ def insertIntoList(distanceList, distanceIndexList, distance, firstIndex, second
             distanceList.pop(-1)
             distanceIndexList.pop(-1)
             return distanceList, distanceIndexList
-    
-        
-            
-#boxes.sort()
-
 distances = []
 distanceIndexes = []
 
@@ -62,13 +53,6 @@ for i in range(len(inputLines) - 1):
 
         distance = calculateDistance(inputLines[i], inputLines[j])
         distances, distanceIndexes = insertIntoList(distances, distanceIndexes, distance, i, j)
-    
-
-    #a = inputLines[i+1]
-    #b = inputLines[lowestDistanceIndex]
-
-    #inputLines[i+1] = b
-    #inputLines[lowestDistanceIndex] = a
 connections = []
 
 for distanceIndex in distanceIndexes:
@@ -120,4 +104,5 @@ circuits.sort(key=lambda x:[len(x), x[0]], reverse=True)
 totalSum = len(circuits[0]) * len(circuits[1]) * len(circuits[2])
 
 print(totalSum)
+
 
