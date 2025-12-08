@@ -3,10 +3,6 @@ inputLines = open("input.txt").read().splitlines()
 
 pairsToCheck = 10000
 
-boxes = []
-for line in inputLines:
-    boxes.append(int(line.split(",")[0]) + int(line.split(",")[1]) + int(line.split(",")[2]))
-
 def calculateDistance(point1, point2):
     p1Coords = point1.split(",")
     p2Coords = point2.split(",")
@@ -114,4 +110,5 @@ for distanceIndex in distanceIndexes:
     
 totalSum = int(lastPair.split(";")[0].split(",")[0]) * int(lastPair.split(";")[1].split(",")[0])
 print(totalSum)
+
 
